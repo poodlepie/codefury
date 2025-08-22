@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgroAssist</title>
+  <link rel="icon" href="/images/agriculture.ico" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+</head>
+<body class="bg-green-100 text-green-900 font-sans">
+
+<!-- Header with Hamburger Slide Menu -->
+<header class="bg-green-900 text-white sticky top-0 z-50 shadow">
+  <div class="max-w-full mx-auto flex items-center justify-between border  py-6 px-4">
+    <h1 class="text-5xl font-bold">Agro<span class="text-green-200">Assist</span></h1>
+    <!-- Hamburger Button (Mobile only) -->
+    <button id="menu-toggle" class="md:hidden focus:outline-none" aria-label="Open main menu">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex">
+      <ul class="flex gap-6 font-semibold">
+        <li><a href="/" class="hover:text-green-200 transition">Home</a></li>
+        <li><a href="/service" class="hover:text-green-200 transition">Service</a></li>
+        <li><a href="/guidance" class="hover:text-green-200 transition">Crop Advisory</a></li>
+        <li><a href="/news" class="hover:text-green-200 transition">News</a></li>
+        <li><a href="/contact" class="hover:text-green-200 transition">Contact</a></li>
+        <li><a href="/about-us" class="hover:text-green-200 transition">About Us</a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- Mobile Slide-in Nav -->
+<div id="mobile-menu" class="fixed top-0 right-0 w-3/4 h-screen bg-green-900 text-white transform translate-x-full transition-transform duration-300 z-50">
+  <!-- Close Button -->
+  <button id="menu-close" class="absolute top-4 right-4 text-white text-4xl">&times;</button>
+
+  <ul class="flex flex-col items-start gap-6 p-6 mt-16 font-bold">
+    <li><a href="/home" class="hover:text-green-200">Home</a></li>
+    <li><a href="/service" class="hover:text-green-200">Service</a></li>
+    <li><a href="/crop-advisory" class="hover:text-green-200">Crop Advisory</a></li>
+    <li><a href="/news" class="hover:text-green-200">News</a></li>
+    <li><a href="/contact" class="hover:text-green-200">Contact</a></li>
+    <li><a href="/about-us" class="hover:text-green-200">About Us</a></li>
+  </ul>
+</div>
+</header>
+
+  <!-- Carousel -->
+  <div id="default-carousel" class="relative w-3/4 max-w-5xl mx-auto mt-4" data-carousel="slide">
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96 my-20">
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="/images/h.jpg" class="absolute block w-full h-full object-cover" alt="Indian farmer using mobile phone in field">
+         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-6">
+        <p class="text-white text-center text-lg md:text-2xl font-semibold italic max-w-xl">
+          "Agriculture is the foundation of civilization and any stable economy."
+        </p>
+         </div>
+      </div>
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="/images/h1.jpg" class="absolute block w-full h-full object-cover" alt="Lush green crop field under blue sky">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-6">
+        <p class="text-white text-center text-lg md:text-2xl font-semibold italic max-w-xl">
+          "Farming isn’t just a job. It’s a way of life"
+        </p>
+         </div>
+      </div>
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="/images/h3.jpg" class="absolute block w-full h-full object-cover" alt="Farmer inspecting crops in Indian field">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-6">
+        <p class="text-white text-center text-lg md:text-2xl font-semibold italic max-w-xl">
+          "The farmer has to be an optimist or he wouldn’t still be a farmer"
+        </p>
+         </div>
+      </div>
+    </div>
+
+    <!-- Carousel controls -->
+    <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-900/30 group-hover:bg-green-900/60">
+        <svg aria-hidden="true" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span class="sr-only">Previous</span>
+      </span>
+    </button>
+    <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-900/30 group-hover:bg-green-900/60">
+        <svg aria-hidden="true" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+        <span class="sr-only">Next</span>
+      </span>
+    </button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="w-3/4 mx-auto relative bg-cover bg-center text-white py-24" style="background-image: url('https://images.unsplash.com/photo-1589279713326-f2d5efb28354?auto=format&fit=crop&w=1500&q=80');">
+    <div class="absolute inset-0 bg-green-900 bg-opacity-70 rounded-lg"></div>
+    <div class="relative max-w-3xl mx-auto text-center px-4">
+      <h2 class="text-4xl font-extrabold mb-4 text-yellow-50 drop-shadow-lg">Grow Smarter, Not Harder</h2>
+      <p class="text-lg mb-8 text-green-100 drop-shadow">Your trusted companion for weather updates, farming tips, and market prices - all in your language, even offline.</p>
+      <a href="/service" class="inline-block bg-green-200 text-green-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-300 transition">Start Your Journey</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="max-w-5xl mx-auto py-16 px-4">
+    <h3 class="text-3xl font-bold text-center mb-10 text-green-900">Our Features</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="bg-white rounded-xl shadow p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-green-50">
+        <h4 class="text-xl font-semibold text-green-800 mb-2">Weather Alerts via SMS</h4>
+        <p class="text-green-700">Receive real-time weather forecasts and alerts on your phone, without needing internet access.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-green-50">
+        <h4 class="text-xl font-semibold text-green-800 mb-2">Crop Advisory</h4>
+        <p class="text-green-700">Localized tips on crop care, pest management, and irrigation delivered in regional languages.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-green-50">
+        <h4 class="text-xl font-semibold text-green-800 mb-2">Market Price Updates</h4>
+        <p class="text-green-700">Stay informed about the latest market prices so you can sell your produce at the best rates.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-green-50">
+        <h4 class="text-xl font-semibold text-green-800 mb-2">Offline Access</h4>
+        <p class="text-green-700">Use key features even without a smartphone or internet, tailored for low-resource settings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="max-w-5xl mx-auto py-16 px-4">
+    <h3 class="text-3xl font-bold text-center mb-10 text-green-900">Why Choose AgroAssist?</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="bg-white rounded-xl shadow p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-green-50">
+        <h4 class="text-xl font-semibold text-green-800 mb-2">Simple and User-Friendly</h4>
+        <p class="text-green-700">Designed for farmers with limited tech experience. Clear interfaces and easy-to-follow instructions.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-green-50">
+        <h4 class="text-xl font-semibold text-green-800 mb-2">Multi-Language Support</h4>
+        <p class="text-green-700">Our platform supports major regional languages to break language barriers.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-green-50">
+        <h4 class="text-xl font-semibold text-green-800 mb-2">Cost-Effective</h4>
+        <p class="text-green-700">Affordable services ensuring farmers get value without heavy investments.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-green-50">
+        <h4 class="text-xl font-semibold text-green-800 mb-2">Scalable & Local</h4>
+        <p class="text-green-700">Built with local needs in mind but scalable for use across regions and states.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+   <!-- FAQ Section -->
+  <section id="faq" class="w-11/12 md:w-3/4 mx-auto my-12 bg-white rounded-xl shadow-lg p-8 md:p-12 lg:p-16 dark:bg-green-800">
+    <h2 class="text-3xl font-bold text-green-900 mb-8 dark:text-green-200">Frequently Asked Questions (FAQ)</h2>
+    <div class="space-y-4">
+      <details class="group border border-green-200 rounded-lg p-4 dark:border-green-700 bg-green-500">
+        <summary class="font-semibold text-lg text-green-800 cursor-pointer dark:text-green-100 group-open:text-green-600 transition">What is AgroAssist?</summary>
+        <p class="mt-2 text-gray-700 dark:text-gray-200">AgriMitra is a digital advisory platform that provides farmers with crop advice, weather updates, and easy access to agricultural support, designed for rural and semi-urban India with low-resource settings.</p>
+      </details>
+      <details class="group border border-green-200 rounded-lg p-4 dark:border-green-700 bg-green-500">
+        <summary class="font-semibold text-lg text-green-800 cursor-pointer dark:text-green-100 group-open:text-green-600 transition">How can I receive crop advice?</summary>
+        <p class="mt-2 text-gray-700 dark:text-gray-200">You can register your farm details and preferred crops through the AgroAssist app, SMS, or helpline. Once registered, you will receive tailored crop recommendations and step-by-step guidance in your local language via SMS or voice calls.</p>
+      </details>
+      <details class="group border border-green-200 rounded-lg p-4 dark:border-green-700 bg-green-500">
+        <summary class="font-semibold text-lg text-green-800 cursor-pointer dark:text-green-100 group-open:text-green-600 transition">How does AgroAssist provide weather updates?</summary>
+        <p class="mt-2 text-gray-700 dark:text-gray-200">AgriMitra delivers hyperlocal weather forecasts and alerts through SMS and voice messages, helping you make timely decisions to protect your crops from adverse weather conditions.</p>
+      </details>
+      <details class="group border border-green-100 rounded-lg p-4 dark:border-green-500 bg-green-500">
+        <summary class="font-semibold text-lg text-green-800 cursor-pointer dark:text-green-100 group-open:text-green-600 transition">Is AgroAssist available in my local language?</summary>
+        <p class="mt-2 text-gray-700 dark:text-gray-200">Yes, AgriMitra supports multiple Indian languages, ensuring that advice and alerts are easily understood by users with different language preferences.</p>
+      </details>
+      <details class="group border border-green-200 rounded-lg p-4 dark:border-green-700 bg-green-500 bg-green-500">
+        <summary class="font-semibold text-lg text-green-800 cursor-pointer dark:text-green-100 group-open:text-green-600 transition">Can I use AgroAssist without a smartphone or internet?</summary>
+        <p class="mt-2 text-gray-700 dark:text-gray-200">Yes, AgriMitra is designed for low-resource environments. You can access services using basic mobile phones via SMS or voice calls, without requiring a smartphone or internet connection.</p>
+      </details>
+      <details class="group border border-green-200 rounded-lg p-4 dark:border-green-700 bg-green-500">
+        <summary class="font-semibold text-lg text-green-800 cursor-pointer dark:text-green-100 group-open:text-green-600 transition">How do I contact AgroAssist for help or more information?</summary>
+        <p class="mt-2 text-gray-700 dark:text-gray-200">You can call the toll-free helpline (1800-419-1919), send an SMS, or visit your nearest AgroAssist Center for in-person assistance. Support is available in multiple languages.</p>
+      </details>
+      <details class="group border border-green-200 rounded-lg p-4 dark:border-green-700 bg-green-500">
+        <summary class="font-semibold text-lg text-green-800 cursor-pointer dark:text-green-100 group-open:text-green-600 transition">Is there a cost to use AgroAssist services?</summary>
+        <p class="mt-2 text-gray-700 dark:text-gray-200">Basic advisory services are free. There may be low-cost premium SMS packs for additional features, but the platform is designed to be affordable for all farmers.</p>
+      </details>
+      <details class="group border border-green-200 rounded-lg p-4 dark:border-green-700 bg-green-500">
+        <summary class="font-semibold text-lg text-green-800 cursor-pointer dark:text-green-100 group-open:text-green-600 transition">How do I register for AgroAssist services?</summary>
+        <p class="mt-2 text-gray-700 dark:text-gray-200">You can register by calling the helpline, sending an SMS with your details, or signing up through the AgroAssist app. Registration helps personalize the advice you receive based on your crops and location.</p>
+      </details>
+      <details class="group border border-green-200 rounded-lg p-4 dark:border-green-700 bg-green-500">
+        <summary class="font-semibold text-lg text-green-800 cursor-pointer dark:text-green-100 group-open:text-green-600 transition">Who provides the agricultural advice on AgroAssist?</summary>
+        <p class="mt-2 text-gray-700 dark:text-gray-200">Advice is curated by agricultural experts, extension agents, and government or NGO partners to ensure accuracy and relevance for local farming conditions.</p>
+      </details>
+      <details class="group border border-green-200 rounded-lg p-4 dark:border-green-700 bg-green-500">
+        <summary class="font-semibold text-lg text-green-800 cursor-pointer dark:text-green-100 group-open:text-green-600 transition">Can I get advice on pest and disease management?</summary>
+        <p class="mt-2 text-gray-700 dark:text-gray-200">Yes, AgroAssist offers pest and disease identification and management tips, including photo-based or voice-based reporting for timely expert assistance.</p>
+      </details>
+    </div>
+    <p class="mt-8 text-green-800 dark:text-green-200 text-center ">
+      If you have more questions, please contact our helpline or visit your nearest AgriMitra Center.
+    </p>
+    
+  </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+<!-- JS for Hamburger Menu Toggle -->
+<!-- END OF HEADER -->
+</header>
+<footer
+            class=" bottom-0 w-full bg-green-900 text-white p-4 text-center shadow-lg"
+        >
+            🌿 Powered by Open Agriculture. | Designed for Students & Farmers
+        </footer>
+
+
+<!-- TOGGLE SCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('menu-close');
+
+    // Toggle open
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+    });
+
+    // Close from inside
+    closeBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenu.classList.remove('translate-x-0');
+    });
+  });
+</script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</body>
+</html>

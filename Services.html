@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crop Advisor - Services</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .service-card {
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    .icon {
+      font-size: 2rem;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+ <header class="flex justify-between items-center bg-green-900 h-[75px]">
+    <h1 class="font-bold  text-2xl text-white m-10">Services</h1>
+     <a href="/" class="m-10 h-[40px] text-sm md:text-base bg-white text-green-800 px-4 py-2 rounded hover:bg-green-200 transition">
+    ← Back to Home
+  </a>
+</header>
+
+
+
+  <section class="container py-5">
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <a href="weather.html" target="_blank" class="text-decoration-none text-dark">
+          <div class="service-card bg-light h-100">
+            <div class="icon mb-3"><i class="bi bi-cloud-sun"></i></div>
+            <h5>Weather Alerts</h5>
+            <p>Localized and real-time weather notifications via SMS and WhatsApp to help farmers plan effectively.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="/guidance" target="_blank" class="text-decoration-none text-dark">
+          <div class="service-card bg-light h-100">
+            <div class="icon mb-3"><i class="bi-seedling"></i></div>
+            <h5>Crop Guidance</h5>
+            <p>Season-based crop selection, soil health advice, and irrigation planning using expert-curated data.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="/news" target="_blank" class="text-decoration-none text-dark">
+          <div class="service-card bg-light h-100">
+            <div class="icon mb-3"><i class="bi bi-graph-up"></i></div>
+            <h5>Market Prices</h5>
+            <p>Daily updates on local mandi prices for crops to help farmers make better selling decisions.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="offline-support.html" target="_blank" class="text-decoration-none text-dark">
+          <div class="service-card bg-light h-100">
+            <div class="icon mb-3"><i class="bi bi-wifi-off"></i></div>
+            <h5>Offline Access</h5>
+            <p>SMS-based access to core services and offline chatbot support using local data sync when online.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="language-support.html" target="_blank" class="text-decoration-none text-dark">
+          <div class="service-card bg-light h-100">
+            <div class="icon mb-3"><i class="bi bi-translate"></i></div>
+            <h5>Language Support</h5>
+            <p>Chatbot available in Hindi, Marathi, Bengali, Tamil, and more, making tech accessible to every farmer.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="expert-help.html" target="_blank" class="text-decoration-none text-dark">
+          <div class="service-card bg-light h-100">
+            <div class="icon mb-3"><i class="bi bi-person-lines-fill"></i></div>
+            <h5>Expert Help</h5>
+            <p>Connect with agricultural officers and local experts for personalized advice and advanced queries.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="govt-schemes.html" target="_blank" class="text-decoration-none text-dark">
+          <div class="service-card bg-light h-100">
+            <div class="icon mb-3"><i class="bi bi-info-circle"></i></div>
+            <h5>Govt. Scheme Alerts</h5>
+            <p>Stay informed about subsidies, loan waivers, training, and schemes for agriculture support.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="equipment-rental.html" target="_blank" class="text-decoration-none text-dark">
+          <div class="service-card bg-light h-100">
+            <div class="icon mb-3"><i class="bi bi-truck"></i></div>
+            <h5>Equipment on Rent</h5>
+            <p>Borrow tractors, threshers, sprayers, and other essential equipment at affordable rates through verified local providers.</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="text-center bg-dark text-white py-3">
+    &copy; 2025 Crop Advisor | Built with ❤️ for Rural India
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

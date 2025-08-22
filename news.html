@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AgroAssist</title>
+  <link rel="icon" href="/images/agriculture.ico" type="image/x-icon" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                background: #f9f9f9;
+                color: #333;
+            }
+            header {
+                background-color: #2e7d32;
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+            h2,
+            h3 {
+                color: #2e7d32;
+                cursor: pointer;
+            }
+            .section {
+                padding: 20px;
+                max-width: 1200px;
+                margin: auto;
+            }
+            .toggle-content {
+                display: none;
+                margin-top: 10px;
+            }
+            .news-card {
+                background: #fff;
+                margin-bottom: 15px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                border-left: 5px solid #66bb6a;
+            }
+            .news-card h3 {
+                margin: 0;
+            }
+            .news-card p {
+                margin: 8px 0;
+            }
+            .news-card a {
+                color: #007bff;
+                text-decoration: none;
+            }
+            .news-card a:hover {
+                text-decoration: underline;
+            }
+            .social-list {
+                list-style-type: none;
+                padding: 0;
+            }
+            .social-list li {
+                background: #e3f2fd;
+                padding: 15px;
+                margin-bottom: 10px;
+                border-left: 4px solid #1e88e5;
+                cursor: pointer;
+            }
+            .social-list li:hover {
+                background: #bbdefb;
+            }
+            #chartContainer {
+                margin-top: 30px;
+                display: none;
+            }
+            .chart-block {
+                background: #fff;
+                margin-top: 30px;
+                padding: 20px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+            }
+            footer {
+                background: #2e7d32;
+                color: white;
+                text-align: center;
+                padding: 10px;
+                margin-top: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <header>
+            <h1>Latest in Agriculture</h1>
+            <p>Stay updated with agriculture news, tips, and trends</p>
+        </header> -->
+
+        <header class="flex justify-between bg-green-900">
+    <h1 class="font-bold  text-2xl">Latest in Agriculture</h1>
+     <a href="/" class="text-sm md:text-base bg-white text-green-800 px-4 py-2 rounded hover:bg-green-200 transition">
+    ← Back to Home
+  </a>
+</header>
+
+        <!-- CURRENT MARKET PRICES SECTION -->
+        <section class="section">
+            <h2 onclick="toggleSection('marketContent')" class="cursor-pointer flex items-center justify-center h-24 font-bold bg-green-300 hover:bg-green-400 text-green-900 rounded-lg shadow-md transition duration-300 select-none">
+                📈 Current Market Prices
+            </h2>
+            <div id="marketContent" class="toggle-content">
+                <div class="news-card">
+                    <h3>Wheat</h3>
+                    <p>
+                        ₹2,150 per quintal – High demand due to export
+                        contracts.
+                    </p>
+                </div>
+                <div class="news-card">
+                    <h3>Rice</h3>
+                    <p>
+                        ₹2,300 per quintal – Steady market, good monsoon impact.
+                    </p>
+                </div>
+                <div class="news-card">
+                    <h3>Maize</h3>
+                    <p>
+                        ₹1,850 per quintal – Fodder usage increasing price
+                        slowly.
+                    </p>
+                </div>
+                <div class="news-card">
+                    <h3>Sugarcane</h3>
+                    <p>
+                        ₹3,400 per ton – High ethanol demand pushing rates up.
+                    </p>
+                </div>
+                <div class="news-card">
+                    <h3>Onion</h3>
+                    <p>₹1,200 per quintal – Recent drop due to over-supply.</p>
+                </div>
+                <div class="news-card">
+                    <h3>Potato</h3>
+                    <p>
+                        ₹1,000 per quintal – Storage pressure causing price dip.
+                    </p>
+                </div>
+                <div class="news-card">
+                    <h3>Tomato</h3>
+                    <p>₹1,800 per quintal – Prices rebound post shortage.</p>
+                </div>
+                <div class="news-card">
+                    <h3>Chickpea</h3>
+                    <p>₹4,500 per quintal – Demand for pulses on the rise.</p>
+                </div>
+                <div class="chart-block">
+                    <canvas
+                        id="marketPriceChart"
+                        width="400"
+                        height="200"
+                    ></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWS SECTION -->
+        <section class="section">
+            <h2 onclick="toggleSection('newsContent')" class="cursor-pointer flex items-center justify-center h-24 font-bold bg-green-300 hover:bg-green-400 text-green-900 rounded-lg shadow-md transition duration-300 select-none">📰 Latest</h2>
+            <div id="newsContent" class="toggle-content">
+                <div class="news-card">
+                    <img
+                        src="https://miro.medium.com/v2/resize:fill:320:214/1*4DN0YCtQU8FlnDolTSk2Ow.jpeg"
+                        width="250"
+                    />
+                    <h3>
+                        UP aims to raise horticulture from 6% to 20% by 2027
+                    </h3>
+                    <p>
+                        Efforts to reduce post-harvest loss and boost
+                        productivity underway.
+                    </p>
+                    <a
+                        href="https://timesofindia.indiatimes.com/city/lucknow/up-sets-target-to-raise-horticultural-produce-from-6-to-20-by-2027/articleshow/121170936.cms"
+                        target="_blank"
+                        >🔗 Learn more</a
+                    >
+                </div>
+                <div class="news-card">
+                    <img
+                        src="https://go.frost.com/hubfs/ADS/K6D3/Global-Agriculture-UAS-Application-Growth-Opportunities_800.jpg"
+                        width="250px"
+                    />
+                    <h3>Digital Panchanama launched in Maharashtra</h3>
+                    <p>
+                        New tool to accelerate compensation after crop damage.
+                    </p>
+                    <a
+                        href="https://timesofindia.indiatimes.com/city/nagpur/digital-panchanama-to-accelerate-disaster-compensation/articleshow/121171278.cms"
+                        target="_blank"
+                        >🔗 Learn more</a
+                    >
+                </div>
+                <div class="news-card">
+                    <img
+                        src="https://d5dkjitd3iude.cloudfront.net/eyJidWNrZXQiOiJ3d3cudGhlZWRnZXByb3BlcnR5LmNvbS5teSIsImtleSI6InMzZnMtcHVibGljXC8xMDMzNzZfMTY4ODI3NDQxMF81RWRnUHJvNV93aGF0c2FwcGltYWdlMjAyMjAzMTNhdDcuMzIuNTlwbTFfMC5qcGVnIiwidmVyc2lvbiI6IjEiLCJlZGl0cyI6eyJyZXNpemUiOnsiZml0Ijoib3V0c2lkZSIsImhlaWdodCI6NzIwfSwiVEVQV2F0ZXJtYXJrIjp7Im9wdGlvbnMiOnsibmFtZSI6IkRFUlJJQ0sgTkciLCJncmF2aXR5Ijoic291dGhlYXN0In19fX0="
+                        width="250px"
+                    />
+                    <h3>Farmers in Bihar earning well from jackfruit</h3>
+                    <p>
+                        Jackfruit cultivation near the Lakhandei river boosts
+                        rural income through better yields.
+                    </p>
+                    <a href="#" target="_blank">🔗 Learn more</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOCIAL MEDIA SECTION -->
+        <section class="section">
+            <h2 onclick="toggleSection('socialContent')" class="cursor-pointer flex items-center justify-center h-24 font-bold bg-green-300 hover:bg-green-400 text-green-900 rounded-lg shadow-md transition duration-300 select-none">📱 Social Media</h2>
+            <div id="socialContent" class="toggle-content">
+                <img
+                    src="https://www.kynetec.com/hs-fs/hubfs/social%20media%20agriculture.jpg?width=1406&height=1224&name=social%20media%20agriculture.jpg"
+                    width="250"
+                />
+                <ul class="social-list">
+                    <li onclick="showChart('YouTube')">
+                        YouTube: Krishi Tips and Agri Videos
+                    </li>
+                    <li onclick="showChart('Instagram')">
+                        Instagram: Farming Reels and Success Stories
+                    </li>
+                    <li onclick="showChart('Twitter')">
+                        Twitter: Government Schemes & Trends
+                    </li>
+                    <li onclick="showChart('Facebook')">
+                        Facebook: Agri Research & Innovations
+                    </li>
+                    <li onclick="showChart('Telegram')">
+                        Telegram: Market Prices and Community Updates
+                    </li>
+                </ul>
+                <div id="chartContainer">
+                    <h3 id="chartTitle">Engagement Data</h3>
+                    <canvas
+                        id="engagementChart"
+                        width="400"
+                        height="200"
+                    ></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- YEAR-WISE CROP CHART -->
+        <section class="section">
+            <h2 onclick="toggleSection('cropContent')" class="cursor-pointer flex items-center justify-center h-24 font-bold bg-green-300 hover:bg-green-400 text-green-900 rounded-lg shadow-md transition duration-300 select-none">
+                🌾 Year-wise Crop Production
+            </h2>
+            <div id="cropContent" class="toggle-content">
+                <div class="chart-block">
+                    <canvas
+                        id="yearlyCropChart"
+                        width="400"
+                        height="200"
+                    ></canvas>
+                </div>
+            </div>
+        </section>
+        <div class="h-[400px]  w-full"></div>
+        <footer
+            class=" bottom-0 w-full bg-green-900 text-white p-4 text-center shadow-lg"
+        >
+            🌿 Powered by Open Agriculture. | Designed for Students & Farmers
+        </footer>
+
+        <script>
+            function toggleSection(id) {
+                const section = document.getElementById(id);
+                section.style.display =
+                    section.style.display === "block" ? "none" : "block";
+            }
+
+            window.onload = function () {
+                // Market Price Chart
+                const marketCanvas =
+                    document.getElementById("marketPriceChart");
+                if (marketCanvas) {
+                    const marketCtx = marketCanvas.getContext("2d");
+                    new Chart(marketCtx, {
+                        type: "line",
+                        data: {
+                            labels: [
+                                "Jan",
+                                "Feb",
+                                "Mar",
+                                "Apr",
+                                "May",
+                                "Jun",
+                                "Jul",
+                                "Aug",
+                                "Sep",
+                                "Oct",
+                                "Nov",
+                                "Dec",
+                            ],
+                            datasets: [
+                                {
+                                    label: "Wheat",
+                                    data: [
+                                        2100, 2150, 2200, 2180, 2250, 2300,
+                                        2350, 2280, 2200, 2150, 2120, 2100,
+                                    ],
+                                    borderColor: "#66bb6a",
+                                    fill: false,
+                                },
+                                {
+                                    label: "Rice",
+                                    data: [
+                                        2250, 2280, 2300, 2320, 2350, 2380,
+                                        2400, 2390, 2360, 2320, 2300, 2280,
+                                    ],
+                                    borderColor: "#42a5f5",
+                                    fill: false,
+                                },
+                                {
+                                    label: "Maize",
+                                    data: [
+                                        1800, 1820, 1850, 1880, 1900, 1920,
+                                        1930, 1900, 1870, 1850, 1820, 1800,
+                                    ],
+                                    borderColor: "#ffca28",
+                                    fill: false,
+                                },
+                                {
+                                    label: "Tomato",
+                                    data: [
+                                        1600, 1700, 1800, 1850, 1900, 2000,
+                                        1950, 1900, 1850, 1800, 1750, 1700,
+                                    ],
+                                    borderColor: "#ef5350",
+                                    fill: false,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: { position: "bottom" },
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: false,
+                                },
+                            },
+                        },
+                    });
+                }
+
+                // Social Media Chart
+                const engagementCanvas =
+                    document.getElementById("engagementChart");
+                let chart;
+                window.showChart = function (platform) {
+                    document.getElementById("chartContainer").style.display =
+                        "block";
+                    document.getElementById(
+                        "chartTitle"
+                    ).textContent = `📊 Engagement on ${platform} (2019–2024)`;
+
+                    const years = [
+                        "2019",
+                        "2020",
+                        "2021",
+                        "2022",
+                        "2023",
+                        "2024",
+                    ];
+                    const dataSets = {
+                        YouTube: [120, 150, 180, 230, 250, 270],
+                        Instagram: [100, 140, 160, 190, 200, 210],
+                        Twitter: [90, 110, 150, 170, 180, 190],
+                        Facebook: [80, 95, 120, 140, 150, 160],
+                        Telegram: [50, 70, 90, 100, 120, 130],
+                    };
+
+                    if (chart) chart.destroy();
+                    chart = new Chart(engagementCanvas.getContext("2d"), {
+                        type: "line",
+                        data: {
+                            labels: years,
+                            datasets: [
+                                {
+                                    label: `${platform} Engagement`,
+                                    data: dataSets[platform],
+                                    borderColor: "#1e88e5",
+                                    backgroundColor: "rgba(30,136,229,0.1)",
+                                    fill: true,
+                                    tension: 0.3,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    });
+                };
+
+                // Year-wise Crop Chart
+                const cropCanvas = document.getElementById("yearlyCropChart");
+                if (cropCanvas) {
+                    const cropCtx = cropCanvas.getContext("2d");
+                    new Chart(cropCtx, {
+                        type: "line",
+                        data: {
+                            labels: [
+                                "2019",
+                                "2020",
+                                "2021",
+                                "2022",
+                                "2023",
+                                "2024",
+                            ],
+                            datasets: [
+                                {
+                                    label: "Wheat (%)",
+                                    data: [60, 62, 65, 68, 70, 73],
+                                    borderColor: "#66bb6a",
+                                    fill: false,
+                                },
+                                {
+                                    label: "Rice (%)",
+                                    data: [55, 58, 60, 63, 65, 67],
+                                    borderColor: "#42a5f5",
+                                    fill: false,
+                                },
+                                {
+                                    label: "Maize (%)",
+                                    data: [30, 35, 40, 45, 50, 55],
+                                    borderColor: "#ffca28",
+                                    fill: false,
+                                },
+                                {
+                                    label: "Sugarcane (%)",
+                                    data: [70, 72, 73, 75, 78, 80],
+                                    borderColor: "#ef5350",
+                                    fill: false,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                y: { beginAtZero: true, max: 100 },
+                            },
+                            plugins: {
+                                legend: { position: "bottom" },
+                            },
+                        },
+                    });
+                }
+            };
+        </script>
+    </body>
+</html>
