@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgriAssist - Smart Farming for All</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+    header {
+      background-color: #388e3c;
+      padding: 1.2rem;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav {
+      margin-top: 0.6rem;
+    }
+    nav a {
+      color: #a5d6a7;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    h2 {
+      color: #2e7d32;
+      margin-bottom: 0.5rem;
+    }
+    p.subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #4caf50;
+    }
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+    .feature {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #a5d6a7aa;
+      padding: 1.5rem;
+      flex: 1 1 250px;
+      min-width: 250px;
+    }
+    .feature h3 {
+      margin-top: 0;
+      color: #2e7d32;
+    }
+    button.cta {
+      margin-top: 2rem;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button.cta:hover {
+      background-color: #1b4d20;
+    }
+    footer {
+      margin: 3rem 0 1rem;
+      text-align: center;
+      color: #4caf50;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>AgriAssist</h1>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#register">Register</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Smart Farming for Small Farmers</h2>
+  <p class="subtitle">Helping farmers improve yield and reduce losses with easy tech solutions.</p>
+  <br/><a href="/service" class="text-sm md:text-base bg-white text-green-800 px-4 py-2 rounded hover:bg-green-200 transition">
+    ← Back to service
+  </a></header>
+
+  <section id="features" class="features">
+    <div class="feature">
+      <h3>Weather Alerts</h3>
+      <p>Receive local weather forecasts and alerts via SMS.</p>
+    </div>
+    <div class="feature">
+      <h3>Crop Advisory</h3>
+      <p>Get expert tips on crop care and pest management in your language.</p>
+    </div>
+    <div class="feature">
+      <h3>Market Prices</h3>
+      <p>Access up-to-date local market prices to sell your produce better.</p>
+    </div>
+  </section>
+
+  <button class="cta" id="register">Register Now</button>
+</main>
+
+<footer id="contact">
+  <p>Contact us: support@agriassist.in</p>
+</footer>
+
+</body>
+</html>

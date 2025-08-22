@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Government Schemes - AgroAid</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/scheme.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      font-style: italic;
+      color: #d9fdd3;
+    }
+
+    main {
+      background: rgba(255, 255, 255, 0.95);
+      color: #222;
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      color: #2e7d32;
+    }
+
+    ul, .scheme {
+      padding-left: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .scheme {
+      background: #e8f5e9;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    .scheme-title {
+      font-weight: bold;
+      color: #1b5e20;
+    }
+
+    .note {
+      background: #fff9c4;
+      padding: 1rem;
+      border-radius: 10px;
+      color: #5d4037;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      background: #f1f8e9;
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid #c5e1a5;
+      font-size: 1rem;
+    }
+
+    input[type="submit"] {
+      background-color: #66bb6a;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #388e3c;
+    }
+
+    .form-message {
+      margin-top: -0.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #757575;
+    }
+
+    footer {
+      background: rgba(255, 255, 255, 0.95);
+      text-align: center;
+      padding: 1rem;
+      color: #333;
+      margin-top: 2rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Government Scheme Alerts</h1>
+    <p>"Don’t miss out on benefits meant for you."</p><br/>
+    <a href="/service" class="text-sm md:text-base bg-white text-green-800 px-4 py-2 rounded hover:bg-green-200 transition">
+    ← Back to service
+  </a>
+  </header>
+
+  <main>
+    <h2>Latest Government Schemes for Farmers</h2>
+
+    <div class="scheme">
+      <p class="scheme-title">1. PM-KISAN Samman Nidhi Yojana</p>
+      <p>₹6,000 per year direct income support for small and marginal farmers, paid in three equal installments. Register with your Aadhaar and land records.</p>
+    </div>
+
+    <div class="scheme">
+      <p class="scheme-title">2. Pradhan Mantri Fasal Bima Yojana (PMFBY)</p>
+      <p>Crop insurance scheme covering financial losses due to natural calamities. Premium is subsidized for all crops.</p>
+    </div>
+
+    <div class="scheme">
+      <p class="scheme-title">3. Kisan Credit Card (KCC)</p>
+      <p>Access to short-term credit at low interest rates. Used for fertilizers, seeds, and emergency needs.</p>
+    </div>
+
+    <div class="scheme">
+      <p class="scheme-title">4. PM Krishi Sinchai Yojana</p>
+      <p>Supports micro-irrigation systems like drip and sprinkler setups with up to 55% subsidy on cost.</p>
+    </div>
+
+    <div class="scheme">
+      <p class="scheme-title">5. National Agriculture Market (e-NAM)</p>
+      <p>Online trading platform for better price discovery for crops. Farmers can sell to buyers across India.</p>
+    </div>
+
+    <div class="note">
+      📢 <strong>Note:</strong> Register with your Aadhaar number to receive customized scheme alerts and eligibility updates.
+    </div>
+
+    <form onsubmit="return validateForm()">
+      <h2>Register for Scheme Updates</h2>
+      <label for="aadhaar">Enter Aadhaar Number</label>
+      <input type="text" id="aadhaar" name="aadhaar" placeholder="12-digit Aadhaar number" maxlength="12" pattern="\d{12}" required />
+      <div class="form-message">Your Aadhaar number is used only for verification and personalized updates.</div>
+      <input type="submit" value="Register Now">
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AgroAid. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function validateForm() {
+      const aadhaar = document.getElementById("aadhaar").value;
+      if (!/^\d{12}$/.test(aadhaar)) {
+        alert("Please enter a valid 12-digit Aadhaar number.");
+        return false;
+      }
+      alert("Registration successful! You will receive updates soon.");
+      return true;
+    }
+  </script>
+
+</body>
+</html>

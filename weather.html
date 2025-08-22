@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Alerts - AgroAid</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('images/weather.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    header p {
+      margin: 0.5rem 0 0;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #d0f0c0;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    table th, table td {
+      padding: 0.8rem;
+      text-align: center;
+      border: 1px solid #c5e1a5;
+    }
+
+    table thead {
+      background-color: #c5e1a5;
+    }
+
+    table tbody tr:nth-child(even) {
+      background-color: #f0f8e0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      margin-top: 2rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      main {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Weather Alerts</h1>
+    <p>"Stay ahead with timely weather updates."</p>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <a href="/service" class="text-sm md:text-base bg-white text-green-800 px-4 py-2 rounded hover:bg-green-200 transition">
+    ← Back to service
+  </a></header>
+  </header>
+
+  <main>
+    <section>
+      <h2>Live Weather Dashboard</h2>
+      <p>Receive accurate, real-time weather updates to plan your farming activities effectively.</p>
+      <div id="live-weather" style="background: #e9f5e7; padding: 1rem; border-radius: 10px; margin-bottom: 2rem;">
+        <ul id="weather-info">
+          <li>Loading weather data...</li>
+        </ul>
+        <p style="font-style: italic; color: #4caf50;">Data updates live using OpenWeather API.</p>
+      </div>
+
+      <h3>Weekly Weather Forecast</h3>
+      <table id="forecast-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Forecast</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Rain Chance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="5">Loading forecast data...</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top: 2rem;">How We Help</h3>
+      <ul>
+        <li>Custom alerts for rainfall, storms, and temperature drops.</li>
+        <li>Localized forecasts by district and village.</li>
+        <li>Advisory notifications via SMS and app push.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AgroAid. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const apiKey = "96ae23821603af6a700bba27d88d6675";
+    const city = "Pune,IN"; // Replace with your desired city
+    const weatherInfo = document.getElementById("weather-info");
+    const forecastTable = document.getElementById("forecast-table").querySelector("tbody");
+
+    // Fetch current weather
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+      .then(res => res.json())
+      .then(data => {
+        weatherInfo.innerHTML = `
+          <li><strong>Temperature:</strong> ${data.main.temp}°C</li>
+          <li><strong>Humidity:</strong> ${data.main.humidity}%</li>
+          <li><strong>Rainfall Probability:</strong> ${data.weather[0].main === "Rain" ? "High" : "Low"}</li>
+          <li><strong>Wind Speed:</strong> ${data.wind.speed} km/h</li>
+          <li><strong>Condition:</strong> ${data.weather[0].description}</li>
+        `;
+      });
+
+    // Fetch 5-day forecast
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`)
+      .then(res => res.json())
+      .then(data => {
+        const forecastMap = {};
+
+        data.list.forEach(item => {
+          const date = new Date(item.dt_txt);
+          const day = date.toLocaleDateString('en-US', { weekday: 'long' });
+
+          if (!forecastMap[day]) {
+            forecastMap[day] = {
+              high: item.main.temp_max,
+              low: item.main.temp_min,
+              rain: item.pop * 100,
+              weather: item.weather[0].main
+            };
+          }
+        });
+
+        forecastTable.innerHTML = "";
+        let count = 0;
+        for (let day in forecastMap) {
+          if (count >= 5) break;
+          const f = forecastMap[day];
+          forecastTable.innerHTML += `
+            <tr>
+              <td>${day}</td>
+              <td>${f.weather}</td>
+              <td>${f.high.toFixed(1)}°C</td>
+              <td>${f.low.toFixed(1)}°C</td>
+              <td>${f.rain.toFixed(0)}%</td>
+            </tr>
+          `;
+          count++;
+        }
+      });
+  </script>
+</body>
+</html>

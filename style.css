@@ -1,0 +1,141 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.header-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.header-subtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 1.8rem;
+  color: #2e7d32;
+  border-bottom: 3px solid #66bb6a;
+  padding-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+/* Weather Cards Container */
+.weather-cards {
+  margin-top: 1rem;
+}
+
+/* Individual Weather Card */
+.weather-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1 1 180px;
+  max-width: 220px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.weather-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.weather-icon {
+  font-size: 3.5rem;
+  color: #388e3c;
+  margin-bottom: 0.5rem;
+}
+
+/* Advisory List */
+.list-advisory {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Subscription Form */
+.subscription form input {
+  flex-grow: 1;
+  max-width: 300px;
+  border: 2px solid #66bb6a;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.subscription form input:focus {
+  border-color: #2e7d32;
+  outline: none;
+}
+
+.subscription form button {
+  min-width: 140px;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .weather-cards {
+    justify-content: center;
+  }
+
+  .weather-card {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .header-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .subscription form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .subscription form input,
+  .subscription form button {
+    max-width: 100%;
+    width: 100%;
+  }
+}

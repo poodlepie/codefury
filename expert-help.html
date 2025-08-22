@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expert Help</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/expert.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+
+    main {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #222;
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 15px;
+    }
+
+    h2, h3 {
+      color: #2e7d32;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background-color: #f1f1f1;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      background: #e8f5e9;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    form label {
+      display: block;
+      margin: 0.8rem 0 0.3rem;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #388e3c;
+    }
+
+    footer {
+      background-color: rgba(255, 255, 255, 0.95);
+      text-align: center;
+      padding: 1rem;
+      color: #333;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Expert Help</h1>
+    <p>"Ask the experts anytime."</p>
+    <br/>
+    <a href="/service" class="text-sm md:text-base bg-white text-green-800 px-4 py-2 rounded hover:bg-green-200 transition">
+    ← Back to service
+  </a>
+  </header>
+
+  <main>
+    <h2>Connect with Agricultural Experts</h2>
+    <p>Access expert agricultural advice from certified consultants directly from your phone or computer.</p>
+
+    <ul>
+      <li><strong>Soil & Crop Consultation:</strong> Personalized recommendations based on soil tests and crop type.</li>
+      <li><strong>Pest & Fertilizer Guidance:</strong> Prevent and treat pest issues with eco-friendly solutions.</li>
+      <li><strong>Remote Image Analysis:</strong> Upload images of your crops to get a visual diagnosis.</li>
+    </ul>
+
+    <section>
+      <h3>How It Works</h3>
+      
+      <div class="card">
+        <strong>1. Schedule a Session</strong><br/>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" required>
+
+          <label for="contact">Contact Info (Phone/Email):</label>
+          <input type="text" id="contact" required>
+
+          <label for="datetime">Preferred Date & Time:</label>
+          <input type="datetime-local" id="datetime" required>
+        </form>
+      </div>
+
+      <div class="card">
+        <strong>2. Share Your Concerns</strong><br/>
+        <form enctype="multipart/form-data">
+          <label for="issue">Describe the issue:</label>
+          <textarea id="issue" rows="4" required></textarea>
+
+          <label for="image">Upload Crop Image:</label>
+          <input type="file" id="image" accept="image/*">
+
+          <button type="submit">Submit to Expert</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <strong>3. Get Advice Instantly</strong><br/>
+        Once submitted, an expert will analyze your request and respond with advice through call, SMS, or app notification.
+      </div>
+    </section>
+
+    <section>
+      <h3>Benefits</h3>
+      <ul>
+        <li>Save time and reduce crop damage by acting early.</li>
+        <li>Free access to expert knowledge anytime, anywhere.</li>
+        <li>Regional language support available for easy communication.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AgroAid. All rights reserved.</p>
+  </footer>
+</body>
+</html>

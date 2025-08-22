@@ -1,233 +1,26 @@
+<!-- crop-guidance.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crop Guidance Center</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background-color: #2e7d32;
-            color: white;
-            padding: 1rem 2rem;
-            text-align: center;
-        }
-
-        section {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        h2 {
-            color: #1b5e20;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem;
-            transition: transform 0.2s;
-        }
-
-        .card img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .card:hover {
-            transform: scale(1.02);
-        }
-
-        .card h3 {
-            color: #2e7d32;
-            margin-top: 0;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.6rem 1rem;
-            background-color: #2e7d32;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background-color: #1b5e20;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            max-width: 600px;
-            position: relative;
-        }
-
-        .modal-content img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        footer {
-            text-align: center;
-            background-color: #1b1b1b;
-            color: #ccc;
-            padding: 1rem;
-        }
-    </style>
-</head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Guidance</title>
+  <link rel="stylesheet" href="css/style.css" /></head>
+  <script src="https://cdn.tailwindcss.com"></script>
 <body>
-
-<header class="flex justify-between bg-green-900">
-    <h1 class="font-bold  text-2xl ">Crop Guidance Center</h1>
-     <a href="/" class="text-sm md:text-base bg-white text-green-800 px-4 py-2 rounded hover:bg-green-200 transition">
-    ← Back to Home
-  </a>
-</header>
-
-<section>
-    <h2>General Agricultural Guidance</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="https://media.istockphoto.com/id/2160078318/photo/close-up-of-a-farmer-planting-a-lettuce-seedling-on-a-community-garden.jpg?s=2048x2048&w=is&k=20&c=BEiHFBtnqyH-533D1kALQ0mR401MXXQQaYn60_Qd6rU=" alt="Soil Health">
-            <h3>Soil Health Maintenance</h3>
-            <p>Maintain optimal soil health through regular testing, proper fertilization, and organic matter incorporation to ensure sustainable crop production.</p>
-        </div>
-        <div class="card">
-            <img src="https://media.istockphoto.com/id/1333701880/photo/botany-icon-concept.jpg?s=2048x2048&w=is&k=20&c=vxox-60lpTsGiaARIgmo5XegY3DvX2EZ5OMJ74L4Wxw=" alt="Crop Rotation">
-            <h3>Crop Rotation Benefits</h3>
-            <p>Implement strategic crop rotation to break pest cycles, enhance soil fertility, reduce erosion, and improve overall farm ecosystem health.</p>
-        </div>
-        <div class="card">
-            <img src="https://plus.unsplash.com/premium_photo-1661835487357-93efb621099b?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Irrigation">
-            <h3>Water-Efficient Irrigation</h3>
-            <p>Adopt modern irrigation techniques like drip systems and soil moisture monitoring to minimize water usage while maximizing crop yield.</p>
-        </div>
-        <div class="card">
-            <img src="https://media.istockphoto.com/id/1130498419/photo/agronomist-using-tablet-computer-collect-data-with-meteorological-instrument-to-measure-the.jpg?s=2048x2048&w=is&k=20&c=mS0vyCgfTuSLjttIFvUDKdkNM-dm-gMhvvWmzWpNDnU=" alt="Weather">
-            <h3>Weather Monitoring</h3>
-            <p>Utilize weather forecasting tools to make informed decisions about planting, harvesting, and crop protection strategies.</p>
-        </div>
-        <div class="card">
-            <img src="https://media.istockphoto.com/id/1160334798/photo/indian-farmer-spraying-pesticide-at-cotton-field.jpg?s=2048x2048&w=is&k=20&c=2TLWiJBktH_vPh0FwwGvJi4yZyRrsJhtqF_H1NsQjJo=" alt="Pest Control">
-            <h3>Pest Management</h3>
-            <p>Implement integrated pest management practices that combine biological controls, resistant varieties, and targeted applications of inputs.</p>
-        </div>
-        <div class="card">
-            <img src="https://media.istockphoto.com/id/1306347581/photo/old-farmer-in-shirt-standing-on-field-with-notebook.jpg?s=2048x2048&w=is&k=20&c=8QLPun4xp6S46fsyelBEowWqjoRvqN0UQtUxPUzckss=" alt="Record Keeping">
-            <h3>Record Keeping</h3>
-            <p>Maintain detailed records of farming activities, inputs, yields, and observations to improve decision-making and track progress.</p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <h2>Specific Crop Guidance</h2>
-    <p>Detailed growing information for major crops, including optimal conditions and common challenges.</p>
-    <div class="grid">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1561504935-4e7d4516a2d1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rice">
-            <h3>Rice</h3>
-            <p><strong>Soil:</strong> Clay or clay loam with good water retention</p>
-            <p><strong>Climate:</strong> Hot and humid (20-35°C)</p>
-            <p><strong>Sowing:</strong> May-June</p>
-            <p><strong>Harvesting:</strong> Sept-Oct</p>
-            <p><strong>Common Issues:</strong> Rice blast, bacterial leaf blight</p>
-            <button class="btn" onclick="showModal('Rice', 'https://via.placeholder.com/500x300?text=Rice+Cultivation', 'Rice requires a warm climate and abundant water. It is typically grown in flooded fields to control weeds and pests.')">Learn More</button>
-        </div>
-        <div class="card">
-            <img src="https://plus.unsplash.com/premium_photo-1661963447711-27f892ffe292?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wheat">
-            <h3>Wheat</h3>
-            <p><strong>Soil:</strong> Well-drained loam or clay loam with neutral pH</p>
-            <p><strong>Climate:</strong> Cool with moderate rainfall (15-25°C)</p>
-            <p><strong>Sowing:</strong> Autumn/Spring</p>
-            <p><strong>Harvesting:</strong> Summer</p>
-            <p><strong>Common Issues:</strong> Rust, powdery mildew</p>
-            <button class="btn" onclick="showModal('Wheat', 'https://via.placeholder.com/500x300?text=Wheat+Harvest', 'Wheat is a staple crop that thrives in cooler climates with well-drained soil and moderate rainfall.')">Learn More</button>
-        </div>
-        <div class="card">
-            <img src="https://media.istockphoto.com/id/649730320/photo/beautiful-view-of-corn-farm-during-sunset.jpg?s=2048x2048&w=is&k=20&c=0ryJnMhMG2FOQh-zDPgzP_lhniFlNUnoRPL4SIlHNck=" alt="Corn">
-            <h3>Maize (Corn)</h3>
-            <p><strong>Soil:</strong> Well-drained fertile loam with high organic content</p>
-            <p><strong>Climate:</strong> Warm and moist (21-32°C)</p>
-            <p><strong>Sowing:</strong> Late spring</p>
-            <p><strong>Harvesting:</strong> Autumn</p>
-            <p><strong>Common Issues:</strong> Corn rust, gray leaf spot</p>
-            <button class="btn" onclick="showModal('Maize', 'https://via.placeholder.com/500x300?text=Maize+Growth', 'Maize grows best in warm conditions and requires good soil fertility and pest management practices.')">Learn More</button>
-        </div>
-    </div>
-</section>
-
-<div id="modal" class="modal" onclick="closeModal()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h3 id="modal-title"></h3>
-        <img id="modal-img" src="" alt="">
-        <p id="modal-text"></p>
-    </div>
-</div>
-
-<footer
-            class=" bottom-0 w-full bg-green-900 text-white p-4 text-center shadow-lg"
-        >
-            🌿 Powered by Open Agriculture. | Designed for Students & Farmers
-        </footer>
-
-<script>
-    function showModal(title, imageUrl, text) {
-        document.getElementById('modal-title').innerText = title;
-        document.getElementById('modal-img').src = imageUrl;
-        document.getElementById('modal-text').innerText = text;
-        document.getElementById('modal').style.display = 'flex';
-    }
-
-    function closeModal() {
-        document.getElementById('modal').style.display = 'none';
-    }
-</script>
-
+  <header><h1>Crop Guidance</h1><p>"Right crop. Right time. Right way."</p>
+  <br/><a href="/service" class="text-sm md:text-base bg-white text-green-800 px-4 py-2 rounded hover:bg-green-200 transition">
+    ← Back to service
+  </a></header>
+  <main style="padding: 2rem; max-width: 960px; margin: auto;">
+    <h2>Seasonal Crop Advice</h2>
+    <p>Get recommendations on which crops to grow based on your soil, region, and weather.</p>
+    <ul>
+      <li>Current Season: Kharif</li>
+      <li>Recommended Crops: Paddy, Maize, Soybean, Cotton</li>
+    </ul>
+    <h3>Soil Health Tips</h3>
+    <p>Regular testing, organic fertilizers, and crop rotation improve productivity.</p>
+    <img src="images/crop.jpg" style="width:100%;border-radius:10px;margin-top:1rem" alt="Crop Guidance"/>
+  </main>
+  <footer><p>&copy; 2025 AgroAid. All rights reserved.</p></footer>
 </body>
 </html>

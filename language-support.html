@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Language Support</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/language.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 960px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #222;
+      border-radius: 15px;
+    }
+
+    ul {
+      line-height: 1.6;
+    }
+
+    #language-switcher {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    #language-switcher button {
+      margin: 0.3rem;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #language-switcher button.active,
+    #language-switcher button:hover {
+      background-color: #388e3c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #333;
+      margin-top: 2rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Language Support</h1>
+    <p id="subtitle">"Understand better in your own language."</p><br/>
+    <a href="/service" class="text-sm md:text-base bg-white text-green-800 px-4 py-2 rounded hover:bg-green-200 transition">
+    ← Back to service
+  </a></header>
+  </header>
+
+  <main>
+    <div id="language-switcher" aria-label="Language switcher">
+      <button data-lang="en" class="active">English</button>
+      <button data-lang="hi">हिन्दी</button>
+      <button data-lang="mr">मराठी</button>
+      <button data-lang="ta">தமிழ்</button>
+      <button data-lang="te">తెలుగు</button>
+      <button data-lang="bn">বাংলা</button>
+      <button data-lang="kn">ಕನ್ನಡ</button>
+      <button id="tts-button" title="Read out content">🔊 Read Aloud</button>
+    </div>
+
+    <h2 id="heading">Multiple Regional Languages</h2>
+    <p id="para1">Choose from Hindi, Marathi, Tamil, Telugu, Bengali, and more.</p>
+    <p id="para2">Language settings can be changed anytime via the profile page.</p>
+    <p id="para3">With our multi-language support, farmers can easily understand agricultural content in their own language.</p>
+    <p id="para4">Audio support and translated videos are also available for low-literacy users.</p>
+  </main>
+
+  
+
+  <script>
+    const translations = {
+      en: {
+        title: "Language Support",
+        subtitle: "\"Understand better in your own language.\"",
+        heading: "Multiple Regional Languages",
+        para1: "Choose from Hindi, Marathi, Tamil, Telugu, Bengali, and more.",
+        para2: "Language settings can be changed anytime via the profile page.",
+        para3: "With our multi-language support, farmers can easily understand agricultural content in their own language.",
+        para4: "Audio support and translated videos are also available for low-literacy users."
+      },
+      hi: {
+        title: "भाषा समर्थन",
+        subtitle: "\"अपनी भाषा में बेहतर समझें।\"",
+        heading: "एकाधिक क्षेत्रीय भाषाएँ",
+        para1: "हिंदी, मराठी, तमिल, तेलुगु, बंगाली आदि में से चुनें।",
+        para2: "प्रोफ़ाइल पृष्ठ से किसी भी समय भाषा बदली जा सकती है।",
+        para3: "हमारे बहुभाषी समर्थन से किसान अपनी भाषा में कृषि सामग्री को आसानी से समझ सकते हैं।",
+        para4: "कम साक्षरता वाले उपयोगकर्ताओं के लिए ऑडियो और अनुवादित वीडियो भी उपलब्ध हैं।"
+      },
+      mr: {
+        title: "भाषा समर्थन",
+        subtitle: "\"आपल्या भाषेत चांगलं समजून घ्या.\"",
+        heading: "अनेक प्रादेशिक भाषा",
+        para1: "हिंदी, मराठी, तमिळ, तेलगु, बंगाली आणि बरेच काही निवडा.",
+        para2: "भाषा सेटिंग्स तुम्ही कधीही प्रोफाईल पेजवरून बदलू शकता.",
+        para3: "आमच्या बहुभाषिक समर्थनामुळे शेतकऱ्यांना त्यांच्याच भाषेत माहिती समजणे सोपे जाते.",
+        para4: "कमी साक्षरता असलेल्यांसाठी ऑडिओ व अनुवादित व्हिडिओही उपलब्ध आहेत."
+      },
+      ta: {
+        title: "மொழி ஆதரவு",
+        subtitle: "\"உங்கள் மொழியில் நன்கு புரிந்து கொள்ளுங்கள்.\"",
+        heading: "பல பிராந்திய மொழிகள்",
+        para1: "இந்தி, மராத்தி, தமிழ், தெலுங்கு, பங்காலி மற்றும் மேலும் தேர்வுசெய்க.",
+        para2: "மொழி அமைப்புகளை எப்போது வேண்டுமானாலும் சுயவிவரப் பக்கத்தில் மாற்றலாம்.",
+        para3: "பலமொழி ஆதரவைப்பயன்படுத்தி விவசாயிகள் தங்கள் சொந்த மொழியில் தகவலை எளிதாகப் புரிந்துகொள்ளலாம்.",
+        para4: "குறைந்த கல்வியறிவு உள்ளவர்களுக்கு ஆடியோ மற்றும் மொழிபெயர்க்கப்பட்ட வீடியோக்களும் கிடைக்கின்றன."
+      },
+      te: {
+        title: "భాషా మద్దతు",
+        subtitle: "\"మీ భాషలో మెరుగ్గా అర్థం చేసుకోండి.\"",
+        heading: "బహుళ ప్రాంతీయ భాషలు",
+        para1: "హిందీ, మరాఠీ, తమిళం, తెలుగు, బెంగాలీ మరియు ఇతర భాషలను ఎంచుకోండి.",
+        para2: "ప్రొఫైల్ పేజీ ద్వారా ఎప్పుడైనా భాష సెట్టింగ్‌లను మార్చవచ్చు.",
+        para3: "మల్టీ లాంగ్వేజ్ సపోర్ట్‌తో రైతులు తమ భాషలో వ్యవసాయ సమాచారం సులభంగా అర్థం చేసుకోవచ్చు.",
+        para4: "తక్కువ అక్షరాస్యత ఉన్నవారికి ఆడియో మరియు అనువదించిన వీడియోలు అందుబాటులో ఉన్నాయి."
+      },
+      bn: {
+        title: "ভাষা সহায়তা",
+        subtitle: "\"আপনার নিজের ভাষায় আরও ভালভাবে বুঝুন।\"",
+        heading: "বহু আঞ্চলিক ভাষা",
+        para1: "হিন্দি, মারাঠি, তামিল, তেলুগু, বাংলা এবং আরও অনেক ভাষা থেকে বেছে নিন।",
+        para2: "প্রোফাইল পৃষ্ঠায় আপনি যেকোনো সময় ভাষা পরিবর্তন করতে পারেন।",
+        para3: "আমাদের বহু ভাষা সমর্থনের মাধ্যমে কৃষকরা তাদের নিজের ভাষায় কৃষি তথ্য সহজেই বুঝতে পারেন।",
+        para4: "কম সাক্ষর ব্যবহারকারীদের জন্য অডিও এবং অনুবাদিত ভিডিও উপলব্ধ।"
+      },
+      kn: {
+        title: "ಭಾಷಾ ಬೆಂಬಲ",
+        subtitle: "\"ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ ಉತ್ತಮವಾಗಿ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ.\"",
+        heading: "ಬಹು ಪ್ರಾದೇಶಿಕ ಭಾಷೆಗಳು",
+        para1: "ಹಿಂದಿ, ಮರಾಠಿ, ತಮಿಳು, ತೆಲುಗು, ಬೆಂಗಾಲಿ ಮತ್ತು ಇನ್ನಷ್ಟು ಭಾಷೆಗಳಿಂದ ಆಯ್ಕೆಮಾಡಿ.",
+        para2: "ಪ್ರೊಫೈಲ್ ಪುಟದಲ್ಲಿ ನೀವು ಯಾವುದೇ ಸಮಯದಲ್ಲಿ ಭಾಷೆಯನ್ನು ಬದಲಾಯಿಸಬಹುದು.",
+        para3: "ನಮ್ಮ ಬಹುಭಾಷಾ ಬೆಂಬಲದಿಂದ ರೈತರು ತಮ್ಮ ಭಾಷೆಯಲ್ಲಿ ಕೃಷಿ ಮಾಹಿತಿಯನ್ನು ಸುಲಭವಾಗಿ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಬಹುದು.",
+        para4: "ಪಾಠಕ ಸಾಮರ್ಥ್ಯ ಕಡಿಮೆ ಇರುವವರಿಗೆ ಧ್ವನಿ ಬೆಂಬಲ ಮತ್ತು ಭಾಷಾಂತರಿತ ವೀಡಿಯೋಗಳೂ ಲಭ್ಯವಿವೆ."
+      }
+    };
+
+    const buttons = document.querySelectorAll('#language-switcher button[data-lang]');
+    const speakBtn = document.getElementById('tts-button');
+
+    let currentLang = 'en';
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentLang = btn.getAttribute('data-lang');
+        updateContent(currentLang);
+      });
+    });
+
+    function updateContent(lang) {
+      const t = translations[lang];
+      document.getElementById('title').textContent = t.title;
+      document.getElementById('subtitle').textContent = t.subtitle;
+      document.getElementById('heading').textContent = t.heading;
+      document.getElementById('para1').textContent = t.para1;
+      document.getElementById('para2').textContent = t.para2;
+      document.getElementById('para3').textContent = t.para3;
+      document.getElementById('para4').textContent = t.para4;
+    }
+
+    speakBtn.addEventListener('click', () => {
+      const text = [
+        translations[currentLang].title,
+        translations[currentLang].heading,
+        translations[currentLang].para1,
+        translations[currentLang].para2,
+        translations[currentLang].para3,
+        translations[currentLang].para4
+      ].join(". ");
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = currentLang === 'en' ? 'en-US' :
+                       currentLang === 'hi' ? 'hi-IN' :
+                       currentLang === 'mr' ? 'mr-IN' :
+                       currentLang === 'ta' ? 'ta-IN' :
+                       currentLang === 'te' ? 'te-IN' :
+                       currentLang === 'bn' ? 'bn-IN' :
+                       currentLang === 'kn' ? 'kn-IN' :
+                       'en-US';
+      speechSynthesis.speak(utterance);
+    });
+  </script>
+</body>
+</html>

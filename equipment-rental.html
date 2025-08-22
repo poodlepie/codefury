@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Equipment on Rent - AgroAid</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/equipment.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      font-style: italic;
+      color: #c8facc;
+    }
+
+    main {
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      color: #2e7d32;
+      margin-top: 0;
+    }
+
+    ul {
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .info {
+      margin-top: 1.5rem;
+      background: #e8f5e9;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    .price-list {
+      background: #dcedc8;
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      color: #33691e;
+    }
+
+    .price-list h3 {
+      margin-top: 0;
+    }
+
+    .price-list table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .price-list th, .price-list td {
+      border: 1px solid #9ccc65;
+      padding: 0.5rem 1rem;
+      text-align: left;
+    }
+
+    .price-list th {
+      background-color: #aed581;
+    }
+
+    form {
+      background-color: #f1f8e9;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #c5e1a5;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    input[readonly] {
+      background-color: #e0e0e0;
+      cursor: not-allowed;
+    }
+
+    input[type="submit"] {
+      background-color: #66bb6a;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #388e3c;
+    }
+
+    #availability-msg {
+      margin: 0.5rem 0 1rem 0;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: rgba(255, 255, 255, 0.95);
+      text-align: center;
+      padding: 1rem;
+      color: #333;
+      margin-top: 2rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Equipment on Rent</h1>
+    <p>"Modern tools without heavy investments."</p><br/>
+    <a href="/service" class="text-sm md:text-base bg-white text-green-800 px-4 py-2 rounded hover:bg-green-200 transition">
+    ← Back to service
+  </a>
+  </header>
+
+  <main>
+    <h2>Rent Modern Farm Equipment</h2>
+    <ul>
+      <li>🚜 Tractors – Available with or without operator</li>
+      <li>🌱 Seed Drills – Efficient sowing and time saving</li>
+      <li>🔄 Rotavators – For soil tilling and land preparation</li>
+      <li>🌾 Harvesters – Reduce labor cost and increase speed</li>
+      <li>🚜 Combine Harvesters – For larger scale farming</li>
+      <li>💧 Sprayers – For pesticide and fertilizer application</li>
+      <li>🚜 Ploughs – For soil preparation before sowing</li>
+    </ul>
+
+    <div class="info">
+      <p>📍 Equipment is available on hourly or daily rates based on your area.</p>
+      <p>🔎 Use your location to find nearest providers and availability.</p>
+      <p>📆 Book in advance to ensure timely delivery and expert operation.</p>
+    </div>
+
+    <!-- Equipment Price List -->
+    <div class="price-list">
+      <h3>Equipment Price List (Approximate Rates)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Equipment</th>
+            <th>Hourly Rate (₹)</th>
+            <th>Daily Rate (₹)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Tractor</td><td>₹500</td><td>₹3500</td></tr>
+          <tr><td>Seed Drill</td><td>₹300</td><td>₹2000</td></tr>
+          <tr><td>Rotavator</td><td>₹400</td><td>₹2800</td></tr>
+          <tr><td>Harvester</td><td>₹700</td><td>₹5000</td></tr>
+          <tr><td>Combine Harvester</td><td>₹900</td><td>₹6000</td></tr>
+          <tr><td>Sprayer</td><td>₹150</td><td>₹1000</td></tr>
+          <tr><td>Plough</td><td>₹250</td><td>₹1700</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <form id="bookingForm" onsubmit="return validateBookingForm()">
+      <h2>Book Your Equipment</h2>
+      <label for="name">Your Full Name</label>
+      <input type="text" id="name" name="name" required placeholder="Enter your name" />
+
+      <label for="contact">Contact Number</label>
+      <input type="tel" id="contact" name="contact" required pattern="[0-9]{10}" placeholder="10-digit phone number" />
+
+      <label for="location">Your Location</label>
+      <input type="text" id="location" name="location" required placeholder="Village / Taluka / District" />
+
+      <label for="equipment">Select Equipment</label>
+      <select id="equipment" name="equipment" required>
+        <option value="">-- Choose Equipment --</option>
+        <option value="tractor">Tractor</option>
+        <option value="seed-drill">Seed Drill</option>
+        <option value="rotavator">Rotavator</option>
+        <option value="harvester">Harvester</option>
+        <option value="combine-harvester">Combine Harvester</option>
+        <option value="sprayer">Sprayer</option>
+        <option value="plough">Plough</option>
+      </select>
+
+      <label for="duration">Duration (e.g., "5 hours" or "2 days")</label>
+      <input type="text" id="duration" name="duration" required placeholder="Enter duration" />
+
+      <label for="price">Estimated Price (₹)</label>
+      <input type="text" id="price" name="price" readonly placeholder="Price will be calculated" />
+
+      <p id="availability-msg" style="color: red;"></p>
+
+      <label for="notes">Additional Notes (Optional)</label>
+      <textarea id="notes" name="notes" rows="3" placeholder="Any specific requirements..."></textarea>
+
+      <input type="submit" value="Book Now" />
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AgroAid. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const rates = {
+      "tractor": {hourly: 500, daily: 3500},
+      "seed-drill": {hourly: 300, daily: 2000},
+      "rotavator": {hourly: 400, daily: 2800},
+      "harvester": {hourly: 700, daily: 5000},
+      "combine-harvester": {hourly: 900, daily: 6000},
+      "sprayer": {hourly: 150, daily: 1000},
+      "plough": {hourly: 250, daily: 1700},
+    };
+
+    const equipmentSelect = document.getElementById('equipment');
+    const durationInput = document.getElementById('duration');
+    const priceInput = document.getElementById('price');
+    const availabilityMsg = document.getElementById('availability-msg');
+
+    function calculatePrice() {
+      const equipment = equipmentSelect.value;
+      const duration = durationInput.value.trim().toLowerCase();
+
+      if (!equipment || !duration) {
+        priceInput.value = '';
+        availabilityMsg.textContent = '';
+        return;
+      }
+
+      // Parse duration string, expecting e.g. "5 hours" or "2 days"
+      const match = duration.match(/^(\d+)\s*(hours|hour|days|day)$/);
+      if (!match) {
+        priceInput.value = 'Invalid duration format';
+        availabilityMsg.textContent = '';
+        return;
+      }
+
+      const amount = parseInt(match[1], 10);
+      const unit = match[2].startsWith('hour') ? 'hourly' : 'daily';
+
+      if (!rates[equipment]) {
+        priceInput.value = 'Invalid equipment selected';
+        availabilityMsg.textContent = '';
+        return;
+      }
+
+      const rate = rates[equipment][unit];
+      const total = rate * amount;
+
+      priceInput.value = total.toLocaleString('en-IN');
+
+      // Check availability (simulate with random)
+      checkAvailability(equipment);
+    }
+
+    // Simulate availability check with 80% chance available
+    function checkAvailability(equipment) {
+      const isAvailable = Math.random() < 0.8;
+      if (isAvailable) {
+        availabilityMsg.style.color = 'green';
+        availabilityMsg.textContent = `${capitalize(equipment)} is available for your booking.`;
+      } else {
+        availabilityMsg.style.color = 'red';
+        availabilityMsg.textContent = `${capitalize(equipment)} is currently not available. Please try a different equipment or time.`;
+      }
+    }
+
+    function capitalize(text) {
+      return text.charAt(0).toUpperCase() + text.slice(1).replace('-', ' ');
+    }
+
+    equipmentSelect.addEventListener('change', calculatePrice);
+    durationInput.addEventListener('input', calculatePrice);
+
+    function validateBookingForm() {
+      const phone = document.getElementById("contact").value;
+      if (!/^\d{10}$/.test(phone)) {
+        alert("Please enter a valid 10-digit mobile number.");
+        return false;
+      }
+      if (!priceInput.value || priceInput.value === 'Invalid duration format' || priceInput.value === 'Invalid equipment selected') {
+        alert("Please enter valid equipment and duration to calculate price.");
+        return false;
+      }
+      if (availabilityMsg.style.color === 'red') {
+        alert("Selected equipment is currently unavailable. Please choose another or try later.");
+        return false;
+      }
+      alert("Your booking request has been submitted successfully!");
+      return true;
+    }
+  </script>
+
+</body>
+</html>
