@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(express.static('public')); // to serve static files like your HTML/CSS
 
 // Handle form submission
-app.post('/contact', (req, res) => {
+app.post('https://github.com/poodlepie/codefury/blob/main/contact.html', (req, res) => {
     const { name, email, concern } = req.body;
 
     const newEntry = {
